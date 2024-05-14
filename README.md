@@ -18,3 +18,19 @@ This project provides a hands-on exploration of COVID19 data analysis techniques
 
 - Python 3
 - Libraries: pandas, matplotlib, seaborn
+
+## In Detail Overview Of The Project
+
+1. Importing COVID-19 dataset
+```python
+import pandas as pd
+
+corona_dataset_csv = pd.read_csv("Datasets/covid19_Confirmed_dataset.csv")
+corona_dataset_csv.head(10)
+```
+![Importing Dataset](https://github.com/rasikasrimal/Covid19DataAnalysisUsingPython/raw/main/Screenshots/importing%20dataset.png)
+
+2.
+
+
+
