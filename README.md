@@ -237,6 +237,10 @@ sns.scatterplot(x=x, y=np.log(y))
 ```
 ![Plotting GDP vs maximum Infection rate](https://github.com/rasikasrimal/Covid19DataAnalysisUsingPython/blob/main/Screenshots/GDP%20vs%20Max%20Infection%20rate%20log%20scale.png)
 
+```python
+sns.regplot(x=x, y=np.log(y))
+```
+![Plotting GDP vs maximum Infection rate best fitting line](https://github.com/rasikasrimal/Covid19DataAnalysisUsingPython/blob/main/Screenshots/GDP%20vs%20Max%20Infection%20rate%20regplot.png)
 
 
 
