@@ -52,7 +52,11 @@ plt.show()
 ```
 ![Visualizing data related to a country](https://github.com/rasikasrimal/Covid19DataAnalysisUsingPython/blob/main/Screenshots/2.4.png)
 
-
+4.Calculating a good measure
+```python
+corona_dataset_aggregated.loc['China'][1:].plot()
+```
+![Calculating a good measure](https://github.com/rasikasrimal/Covid19DataAnalysisUsingPython/blob/main/Screenshots/3.png)
 
 
 
