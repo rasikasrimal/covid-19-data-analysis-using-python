@@ -37,6 +37,22 @@ corona_dataset_aggregated.head()
 ```
 ![Aggregating the rows by the country](https://github.com/rasikasrimal/Covid19DataAnalysisUsingPython/blob/main/Screenshots/Screenshot%202024-05-14%20214017.png)
 
+3.Visualizing data related to a country for example China
+```python
+corona_dataset_aggregated.loc["China"][1:].plot(label='China')  
+corona_dataset_aggregated.loc["Italy"][1:].plot(label='Italy')
+
+plt.legend()
+plt.title('COVID-19 Cases in China and Italy')
+plt.xlabel('Date')
+plt.ylabel('Total Cases')
+plt.grid(True)
+
+plt.show()
+```
+![Visualizing data related to a country](https://github.com/rasikasrimal/Covid19DataAnalysisUsingPython/blob/main/Screenshots/2.4.png)
+
+
 
 
 
