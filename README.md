@@ -57,6 +57,26 @@ plt.show()
 corona_dataset_aggregated.loc['China'][1:].plot()
 ```
 ![Calculating a good measure](https://github.com/rasikasrimal/Covid19DataAnalysisUsingPython/blob/main/Screenshots/3.png)
+```python
+corona_dataset_aggregated.loc['Italy'][1:].plot()
+```
+![Calculating a good measure](https://github.com/rasikasrimal/Covid19DataAnalysisUsingPython/blob/main/Screenshots/3.2.png)
 
+5.caculating the first derivative of the curve
+```python
+countries = list(corona_dataset_aggregated.index)
+max_infection_rates = []
+
+for c in countries:
+    try:
+        numeric_data = corona_dataset_aggregated.loc[c]
+        if numeric_data.dtype == 'int64' or numeric_data.dtype == 'float64':
+            max_data_infection_rate = numeric_data.diff().max()
+            max_infection_rates.append(max_data_infection_rate)
+    except Exception as e:
+        print(f"Error processing data for {c}: {e}")
+
+max_infection_rates
+```
 
 
