@@ -30,7 +30,13 @@ corona_dataset_csv.head(10)
 ```
 ![Importing Dataset](https://github.com/rasikasrimal/Covid19DataAnalysisUsingPython/raw/main/Screenshots/importing%20dataset.png)
 
-2.
+2.Aggregating the rows by the country
+```python
+corona_dataset_aggregated = corona_dataset_csv.groupby("Country/Region").sum()
+corona_dataset_aggregated.head()
+```
+![Aggregating the rows by the country](https://github.com/rasikasrimal/Covid19DataAnalysisUsingPython/blob/main/Screenshots/Screenshot%202024-05-14%20214017.png)
+
 
 
 
