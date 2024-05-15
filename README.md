@@ -133,6 +133,81 @@ corona_data.head()
 
 
 
+### WorldHappinessReport.csv dataset: 
+- Importing the WorldHappinessReport.csv dataset
+- selecting needed columns for our analysis 
+- join the datasets 
+- calculate the correlations as the result of our analysis
+
+### Importing the dataset
+
+```python
+happiness_report_csv = pd.read_csv("Datasets/worldwide_happiness_report.csv")
+happiness_report_csv.head()
+```
+| Overall rank | Country or region | Score | GDP per capita | Social support | Healthy life expectancy | Freedom to make life choices | Generosity | Perceptions of corruption |
+|--------------|-------------------|-------|----------------|----------------|-------------------------|------------------------------|------------|--------------------------|
+| 1            | Finland           | 7.769 | 1.340          | 1.587          | 0.986                   | 0.596                        | 0.153      | 0.393                    |
+| 2            | Denmark           | 7.600 | 1.383          | 1.573          | 0.996                   | 0.592                        | 0.252      | 0.410                    |
+| 3            | Norway            | 7.554 | 1.488          | 1.582          | 1.028                   | 0.603                        | 0.271      | 0.341                    |
+| 4            | Iceland           | 7.494 | 1.380          | 1.624          | 1.026                   | 0.591                        | 0.354      | 0.118                    |
+| 5            | Netherlands       | 7.488 | 1.396          | 1.522          | 0.999                   | 0.557                        | 0.322      | 0.298                    |
+
+Removing(drop) useless columns:
+```python
+drop_cols = ["Overall rank", "Score", "Generosity", "Perceptions of corruption"]
+happiness_report_csv.drop(drop_cols, axis=1, inplace=True)
+happiness_report_csv.head()
+```
+| Country or region | GDP per capita | Social support | Healthy life expectancy | Freedom to make life choices |
+|-------------------|----------------|----------------|-------------------------|------------------------------|
+| Finland           | 1.340          | 1.587          | 0.986                   | 0.596                        |
+| Denmark           | 1.383          | 1.573          | 0.996                   | 0.592                        |
+| Norway            | 1.488          | 1.582          | 1.028                   | 0.603                        |
+| Iceland           | 1.380          | 1.624          | 1.026                   | 0.591                        |
+| Netherlands       | 1.396          | 1.522          | 0.999                   | 0.557                        |
+
+Changing the indices of the dataframe:
+```python
+happiness_report_csv.set_index("Country or region", inplace=True)
+happiness_report_csv.head()
+```
+
+Corona dataset:
+
+| Country/Region | max_infection_rate |
+|----------------|--------------------|
+| Afghanistan    | 232.0              |
+| Albania        | 34.0               |
+| Algeria        | 199.0              |
+| Andorra        | 43.0               |
+| Angola         | 5.0                |
+
+Wolrd happiness report Dataset :
+| Country or region | GDP per capita | Social support | Healthy life expectancy | Freedom to make life choices |
+|-------------------|----------------|----------------|-------------------------|------------------------------|
+| Finland           | 1.340          | 1.587          | 0.986                   | 0.596                        |
+| Denmark           | 1.383          | 1.573          | 0.996                   | 0.592                        |
+| Norway            | 1.488          | 1.582          | 1.028                   | 0.603                        |
+| Iceland           | 1.380          | 1.624          | 1.026                   | 0.591                        |
+| Netherlands       | 1.396          | 1.522          | 0.999                   | 0.557                        |
+
+```python
+data = corona_data.join(happiness_report_csv, how="inner")
+data.head()
+```
+
+| Country        | max_infection_rate | GDP per capita | Social support | Healthy life expectancy | Freedom to make life choices |
+|----------------|--------------------|----------------|----------------|-------------------------|------------------------------|
+| Afghanistan   | 232.0              | 0.350          | 0.517          | 0.361                   | 0.000                        |
+| Albania        | 34.0               | 0.947          | 0.848          | 0.874                   | 0.383                        |
+| Algeria        | 199.0              | 1.002          | 1.160          | 0.785                   | 0.086                        |
+| Argentina      | 291.0              | 1.092          | 1.432          | 0.881                   | 0.471                        |
+| Armenia        | 134.0              | 0.850          | 1.055          | 0.815                   | 0.283                        |
+
+Correlation matrix:
+
+
 
 
 
