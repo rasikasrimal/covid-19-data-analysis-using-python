@@ -211,15 +211,31 @@ data.corr()
 ```
 |                   | max_infection_rate | GDP per capita | Social support | Healthy life expectancy | Freedom to make life choices |
 |-------------------|--------------------|----------------|----------------|-------------------------|------------------------------|
-| max_infection_rate | 1.000000           | 0.250118       | 0.191958       | 0.289263                | 0.078196                     |
+| max_infection_rate | 1.000000          | 0.250118       | 0.191958       | 0.289263                | 0.078196                     |
 | GDP per capita    | 0.250118           | 1.000000       | 0.759468       | 0.863062                | 0.394603                     |
 | Social support    | 0.191958           | 0.759468       | 1.000000       | 0.765286                | 0.456246                     |
-| Healthy life expectancy | 0.289263      | 0.863062       | 0.765286       | 1.000000                | 0.427892                     |
-| Freedom to make life choices | 0.078196 | 0.394603       | 0.456246       | 0.427892                | 1.000000                     |
+| Healthy life expectancy | 0.289263     | 0.863062       | 0.765286       | 1.000000                | 0.427892                     |
+| Freedom to make life choices | 0.078196 | 0.394603      | 0.456246       | 0.427892                | 1.000000                     |
 
 
 
+### Visualization of the results
 
+Plotting GDP vs maximum Infection rate:
+```python
+x = data["GDP per capita"]
+y = data["max_infection_rate"]
+sns.scatterplot(x=x, y=y)
+```
+![Plotting GDP vs maximum Infection rate](https://github.com/rasikasrimal/Covid19DataAnalysisUsingPython/blob/main/Screenshots/GDP%20vs%20Max%20Infection%20rate.png)
+
+In Log Scale:
+```python
+x = data["GDP per capita"]
+y = data["max_infection_rate"]
+sns.scatterplot(x=x, y=np.log(y))
+```
+![Plotting GDP vs maximum Infection rate](https://github.com/rasikasrimal/Covid19DataAnalysisUsingPython/blob/main/Screenshots/GDP%20vs%20Max%20Infection%20rate%20log%20scale.png)
 
 
 
