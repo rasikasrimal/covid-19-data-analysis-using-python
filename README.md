@@ -62,21 +62,23 @@ corona_dataset_aggregated.loc['Italy'][1:].plot()
 ```
 ![Calculating a good measure](https://github.com/rasikasrimal/Covid19DataAnalysisUsingPython/blob/main/Screenshots/3.2.png)
 
-5.caculating the first derivative of the curve
+5.Calculating the first derivative of the curve
 ```python
-countries = list(corona_dataset_aggregated.index)
-max_infection_rates = []
+corona_dataset_aggregated = corona_dataset_aggregated.apply(pd.to_numeric, errors='coerce')
 
-for c in countries:
-    try:
-        numeric_data = corona_dataset_aggregated.loc[c]
-        if numeric_data.dtype == 'int64' or numeric_data.dtype == 'float64':
-            max_data_infection_rate = numeric_data.diff().max()
-            max_infection_rates.append(max_data_infection_rate)
-    except Exception as e:
-        print(f"Error processing data for {c}: {e}")
+corona_dataset_aggregated.fillna(method='ffill', inplace=True)
+corona_dataset_aggregated.loc['China'].diff().plot()
 
-max_infection_rates
+
+plt.xlabel('Date')
+plt.ylabel('Difference')
+plt.title('Daily Change in COVID-19 Cases for China')
+
+plt.grid(True)
+plt.show()
+
 ```
+![Calculating a good measure](https://github.com/rasikasrimal/Covid19DataAnalysisUsingPython/blob/main/Screenshots/Derivative.png)
+
 
 
