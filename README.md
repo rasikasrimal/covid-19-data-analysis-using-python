@@ -2,6 +2,9 @@
 
 Kaggle Link - https://www.kaggle.com/code/rasikasrimal/covid-19-data-analysis
 
+My other Covid-19 Data Visualization Project (advanced) - https://github.com/rasikasrimal/covid-19-data-visualization
+Kaggle Link - https://www.kaggle.com/code/rasikasrimal/covid-19-data-visualization
+
 This project provides a hands-on exploration of COVID19 data analysis techniques using Python. It covers data preparation, analysis, and visualization, aiming to understand correlations with happiness metrics.
 
 ## Project Overview
